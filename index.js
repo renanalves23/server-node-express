@@ -23,12 +23,12 @@ server.use((req, res, next) =>{
 //Midware Local //vai no corpo da requisição e vê se existe a informação user
 function checkUserExists(req, res, next) {
     //caso não ache
-  if(!req.body.user) {
+  if (!req.body.name) {
     return res.status(400).json({ error: 'User not found on request body' });
   }
   //caso exista
   return next();
-};
+}
 
 //retorna todos os usuários utiliza Route params
 server.get('/users', (req, res) => {
