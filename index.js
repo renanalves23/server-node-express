@@ -31,7 +31,7 @@ function checkUserExists(req, res, next) {
 }
 
 function checkUserInArray(req, res, next) {
-  if (!users[req.params]) {
+  if (!users[req.params.index]) {
     return res.status(400).json({ error: 'User does not exist' });
   }
   return next();
