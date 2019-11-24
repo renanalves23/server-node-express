@@ -12,7 +12,7 @@ const users = ['Diego', 'Renan', 'Victor'];
 
 //Midwares
 server.use((req, res, next) =>{
-  console.log('A requisição foi chamada');
+  console.log(`Método: ${req.method}; URL: ${req.url}`);
 
   return next();
 });
