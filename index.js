@@ -43,7 +43,7 @@ server.get('/users/:index', (req, res) => {
 });
 
 //utiliza Request Body
-server.post('/users', (req, res) => {
+server.post('/users', checkUserExists, (req, res) => {
     const { name } = req.body;
 
     users.push(name);
@@ -52,7 +52,7 @@ server.post('/users', (req, res) => {
 });
 
 //utiliza Request Body
-server.put('/users/:index', (req, res) => {
+server.put('/users/:index', checkUserExists, (req, res) => {
     const { index } = req.params;
     const { name } = req.body;
 
