@@ -10,6 +10,13 @@ server.use(express.json());
 
 const users = ['Diego', 'Renan', 'Victor'];
 
+//Midwares
+server.use((req, res, next) =>{
+  console.log('A requisição foi chamada');
+
+  return next();
+});
+
 //retorna todos os usuários utiliza Route params
 server.get('/users', (req, res) => {
   return res.json(users);
